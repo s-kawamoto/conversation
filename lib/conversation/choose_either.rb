@@ -2,8 +2,8 @@ module Conversation
   module_function
 
   def choose_either(comment = '', first_request = 'yes', second_request = 'no', unclear: nil, unexpected: nil)
-    comment = "[#{first_request}|#{second_request}]:" if comment.nil? || comment.empty?
     print comment
+    print "[#{first_request}|#{second_request}]:"
     response = STDIN.gets.chomp
 
     response_check(response, first_request, second_request, unclear, unexpected)
